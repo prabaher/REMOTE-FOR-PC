@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Laptop Remote V2</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="app">
+
+        <!-- ========================================= -->
+        <!-- HEADER -->
+        <!-- ========================================= -->
+
+        <header class="header">
+
+            <div>
+                <h1>💻 Laptop Remote</h1>
+
+                <p id="hostname">
+                    Connecting...
+                </p>
+            </div>
+
+            <div class="connection">
+
+                <span
+                    id="status-dot"
+                    class="status-dot offline"
+                ></span>
+
+                <span id="status-text">
+                    Connecting
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- ========================================= -->
+        <!-- MEDIA CONTROLS -->
+        <!-- ========================================= -->
+
+        <section class="card">
+
+            <div class="section-title">
+                🎬 Media Controls
+            </div>
+
+
+            <div class="media-controls">
+
+                <button
+                    class="control-btn"
+                    onclick="sendCommand('VOLDOWN')"
+                >
+                    🔉
+                    <span>Volume -</span>
+                </button>
+
+
+                <button
+                    class="control-btn play-btn"
+                    onclick="sendCommand('PLAY')"
+                >
+                    ⏯️
+                    <span>Play</span>
+                </button>
+
+
+                <button
+                    class="control-btn"
+                    onclick="sendCommand('VOLUP')"
+                >
+                    🔊
+                    <span>Volume +</span>
+                </button>
+
+            </div>
+
+
+            <div class="media-controls">
+
+                <button
+                    class="control-btn"
+                    onclick="sendCommand('BACKWARD')"
+                >
+                    ⏪
+                    <span>Back</span>
+                </button>
+
+
+                <button
+                    class="control-btn"
+                    onclick="sendCommand('FORWARD')"
+                >
+                    ⏩
+                    <span>Forward</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- KEYBOARD CONTROLS -->
+        <!-- ========================================= -->
+
+        <section class="card">
+
+            <div class="section-title">
+                ⌨️ Keyboard
+            </div>
+
+
+            <div class="arrow-pad">
+
+                <button
+                    class="arrow-btn"
+                    onclick="sendCommand('UP')"
+                >
+                    ⬆️
+                </button>
+
+
+                <div class="arrow-middle">
+
+                    <button
+                        class="arrow-btn"
+                        onclick="sendCommand('LEFT')"
+                    >
+                        ⬅️
+                    </button>
+
+
+                    <button
+                        class="arrow-btn"
+                        onclick="sendCommand('DOWN')"
+                    >
+                        ⬇️
+                    </button>
+
+
+                    <button
+                        class="arrow-btn"
+                        onclick="sendCommand('RIGHT')"
+                    >
+                        ➡️
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- MOUSE CONTROLS -->
+        <!-- ========================================= -->
+
+        <section class="card">
+
+            <div class="section-title">
+                🖱️ Mouse
+            </div>
+
+
+            <div
+                id="touchpad"
+                class="touchpad"
+            >
+
+                <div class="touchpad-label">
+                    Touchpad
+                </div>
+
+
+                <div class="mouse-arrows">
+
+                    <button
+                        onclick="sendCommand('UP_m')"
+                    >
+                        ⬆️
+                    </button>
+
+
+                    <button
+                        onclick="sendCommand('LEFT_m')"
+                    >
+                        ⬅️
+                    </button>
+
+
+                    <button
+                        onclick="sendCommand('DOWN_m')"
+                    >
+                        ⬇️
+                    </button>
+
+
+                    <button
+                        onclick="sendCommand('RIGHT_m')"
+                    >
+                        ➡️
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="click-controls">
+
+                <button
+                    class="click-btn"
+                    onclick="sendCommand('CLICK')"
+                >
+                    🖱️ Left Click
+                </button>
+
+
+                <button
+                    class="click-btn"
+                    onclick="sendCommand('RIGHT_CLICK')"
+                >
+                    🖱️ Right Click
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- WINDOWS CONTROLS -->
+        <!-- ========================================= -->
+
+        <section class="card">
+
+            <div class="section-title">
+                🪟 Windows Controls
+            </div>
+
+
+            <div class="windows-controls">
+
+                <button
+                    class="system-btn"
+                    onclick="sendCommand('MINIMIZE')"
+                >
+                    ➖
+                    <span>Minimize</span>
+                </button>
+
+
+                <button
+                    class="system-btn"
+                    onclick="sendCommand('MAXIMIZE')"
+                >
+                    ➕
+                    <span>Restore</span>
+                </button>
+
+
+                <button
+                    class="system-btn"
+                    onclick="sendCommand('ALT_TAB')"
+                >
+                    🔄
+                    <span>Alt + Tab</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- MESSAGE -->
+        <!-- ========================================= -->
+
+        <div
+            id="message"
+            class="message"
+        >
+        </div>
+
+
+        <footer>
+
+            <p>
+                Laptop Remote V2
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='app.js') }}"
+    ></script>
+
+</body>
+
+</html>

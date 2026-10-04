@@ -1,0 +1,528 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    background: #0b0f14;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    min-height: 100vh;
+
+    padding: 16px;
+}
+
+
+button {
+
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    color: white;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.app {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    margin: auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background: #151b23;
+
+    border: 1px solid #27303b;
+}
+
+
+.header h1 {
+
+    font-size: 24px;
+
+    margin-bottom: 5px;
+}
+
+
+.header p {
+
+    color: #8f9baa;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   CONNECTION
+===================================================== */
+
+.connection {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+
+.status-dot {
+
+    width: 11px;
+
+    height: 11px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+
+.status-dot.online {
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 10px rgba(34, 197, 94, 0.7);
+}
+
+
+.status-dot.offline {
+
+    background: #ef4444;
+
+    box-shadow:
+        0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card {
+
+    background: #151b23;
+
+    border: 1px solid #27303b;
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    margin-bottom: 16px;
+}
+
+
+.section-title {
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 16px;
+}
+
+
+/* =====================================================
+   MEDIA
+===================================================== */
+
+.media-controls {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+}
+
+
+.media-controls:last-child {
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    margin-bottom: 0;
+}
+
+
+.control-btn {
+
+    min-height: 75px;
+
+    background: #202832;
+
+    border: 1px solid #303b48;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 25px;
+
+    transition: 0.15s;
+}
+
+
+.control-btn span {
+
+    font-size: 12px;
+
+    color: #aab4c0;
+}
+
+
+.control-btn:active {
+
+    transform: scale(0.94);
+
+    background: #2b3642;
+}
+
+
+.play-btn {
+
+    background: #1e3a5f;
+
+    border-color: #315c8c;
+}
+
+
+/* =====================================================
+   ARROW PAD
+===================================================== */
+
+.arrow-pad {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.arrow-middle {
+
+    display: flex;
+
+    gap: 8px;
+}
+
+
+.arrow-btn {
+
+    width: 70px;
+
+    height: 60px;
+
+    background: #202832;
+
+    border: 1px solid #303b48;
+
+    border-radius: 14px;
+
+    font-size: 25px;
+
+    transition: 0.15s;
+}
+
+
+.arrow-btn:active {
+
+    transform: scale(0.92);
+
+    background: #2b3642;
+}
+
+
+/* =====================================================
+   TOUCHPAD
+===================================================== */
+
+.touchpad {
+
+    height: 230px;
+
+    border-radius: 18px;
+
+    background: #0f141a;
+
+    border: 2px dashed #303b48;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 12px;
+}
+
+
+.touchpad-label {
+
+    color: #667382;
+
+    font-size: 14px;
+}
+
+
+.mouse-arrows {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 55px);
+
+    gap: 7px;
+}
+
+
+.mouse-arrows button {
+
+    height: 50px;
+
+    background: #202832;
+
+    border-radius: 12px;
+
+    font-size: 20px;
+}
+
+
+.mouse-arrows button:first-child {
+
+    grid-column: 2;
+}
+
+
+.mouse-arrows button:nth-child(2) {
+
+    grid-column: 1;
+    grid-row: 2;
+}
+
+
+.mouse-arrows button:nth-child(3) {
+
+    grid-column: 2;
+    grid-row: 2;
+}
+
+
+.mouse-arrows button:nth-child(4) {
+
+    grid-column: 3;
+    grid-row: 2;
+}
+
+
+.click-controls {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+}
+
+
+.click-btn {
+
+    min-height: 55px;
+
+    background: #202832;
+
+    border: 1px solid #303b48;
+
+    border-radius: 13px;
+
+    font-weight: bold;
+
+    transition: 0.15s;
+}
+
+
+.click-btn:active {
+
+    transform: scale(0.95);
+}
+
+
+/* =====================================================
+   WINDOWS
+===================================================== */
+
+.windows-controls {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+
+.system-btn {
+
+    min-height: 75px;
+
+    background: #202832;
+
+    border: 1px solid #303b48;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 23px;
+
+    transition: 0.15s;
+}
+
+
+.system-btn span {
+
+    font-size: 11px;
+
+    color: #aab4c0;
+}
+
+
+.system-btn:active {
+
+    transform: scale(0.94);
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.message {
+
+    text-align: center;
+
+    min-height: 20px;
+
+    margin: 10px 0;
+
+    font-size: 13px;
+
+    color: #8f9baa;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    text-align: center;
+
+    padding: 15px;
+
+    color: #596573;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 700px) {
+
+    body {
+
+        padding: 30px;
+    }
+
+
+    .app {
+
+        max-width: 700px;
+    }
+
+
+    .header h1 {
+
+        font-size: 28px;
+    }
+
+}
